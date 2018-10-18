@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}登录 {% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>登录</h1>
+    </div>
+    <p>新用户？
+    <a href="{{ url_for('auth.register') }}">点击注册</a></p>
+    {{ wtf.quick_form(form) }}
+    <p>忘记密码？
+    <a href="{{ url_for('auth.resetpass') }}">密码重置</a></p>
+    <div class="footer">
+        powered by Damen
+    </div>
+{% endblock %}

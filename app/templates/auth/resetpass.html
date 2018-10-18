@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}重置密码 {% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>重置密码</h1>
+    </div>
+    {% if not session['send']  %}
+    {{ wtf.quick_form(form) }}
+    {% else %}
+        邮件已发，请进入邮箱查看。
+    {% endif %}
+    <div class="footer">
+        powered by Damen
+    </div>
+{% endblock %}
